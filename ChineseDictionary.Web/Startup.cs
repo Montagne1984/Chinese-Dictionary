@@ -107,6 +107,11 @@ namespace ChineseDictionary.Web
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute("spa-fallback",
+                                "{*anything}",
+                                new { controller = "Home", action = "Index" });
+                routes.MapRoute("defaultApi",
+                                      "api/{controller}/{id?}");
             });
         }
 
