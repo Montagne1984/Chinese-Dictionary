@@ -1,4 +1,4 @@
-﻿/// <binding Clean='clean' />
+﻿/// <binding BeforeBuild='copy' Clean='clean' />
 "use strict";
 
 var gulp = require("gulp"),
@@ -6,6 +6,23 @@ var gulp = require("gulp"),
     concat = require("gulp-concat"),
     cssmin = require("gulp-cssmin"),
     uglify = require("gulp-uglify");
+
+var angularJs = [
+    "./node_modules/es6-shim/es6-shim.min.js",
+    "./node_modules/systemjs/dist/system-polyfills.js",
+    "./node_modules/angular2/es6/dev/src/testing/shims_for_IE.js",
+    "./node_modules/angular2/bundles/angular2-polyfills.js",
+    "./node_modules/systemjs/dist/system.src.js",
+    "./node_modules/rxjs/bundles/Rx.js",
+    "./node_modules/angular2/bundles/angular2.dev.js",
+    './node_modules/angular2/bundles/router.dev.js',
+    './node_modules/angular2/bundles/http.dev.js'
+];
+
+gulp.task('copy:js', function () {
+    gulp.src(angularJs)
+        .pipe(gulp.dest('./wwwroot/js/angular2'));
+});
 
 var paths = {
     webroot: "./wwwroot/"
@@ -42,4 +59,5 @@ gulp.task("min:css", function () {
         .pipe(gulp.dest("."));
 });
 
+gulp.task('copy', ['copy:js']);
 gulp.task("min", ["min:js", "min:css"]);
