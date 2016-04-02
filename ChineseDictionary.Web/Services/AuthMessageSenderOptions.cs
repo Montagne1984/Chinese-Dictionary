@@ -13,5 +13,8 @@ namespace ChineseDictionary.Web.Services
         public string MailSenderDisplayName { get; set; }
         public string SmtpUserName { get; set; }
         public string SmtpPassword { get; set; }
+        public string TwilioSID { get; set; }
+        public string TwilioAuthToken { get; set; }
+        public string TwilioSendNumber { get; set; }
     }
 }

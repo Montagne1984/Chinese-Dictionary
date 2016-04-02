@@ -1941,6 +1941,15 @@
           "lib/net45/Remotion.Linq.dll": {}
         }
       },
+      "RestSharp/105.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net46/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net46/RestSharp.dll": {}
+        }
+      },
       "System.Collections/4.0.0": {
         "type": "package",
         "compile": {
@@ -2156,6 +2165,18 @@
         },
         "runtime": {
           "lib/net45/_._": {}
+        }
+      },
+      "Twilio/4.7.0": {
+        "type": "package",
+        "dependencies": {
+          "RestSharp": "105.2.2"
+        },
+        "compile": {
+          "lib/3.5/Twilio.Api.dll": {}
+        },
+        "runtime": {
+          "lib/3.5/Twilio.Api.dll": {}
         }
       }
     },
@@ -4101,6 +4122,15 @@
           "lib/net45/Remotion.Linq.dll": {}
         }
       },
+      "RestSharp/105.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net46/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net46/RestSharp.dll": {}
+        }
+      },
       "System.Collections/4.0.0": {
         "type": "package",
         "compile": {
@@ -4316,6 +4346,18 @@
         },
         "runtime": {
           "lib/net45/_._": {}
+        }
+      },
+      "Twilio/4.7.0": {
+        "type": "package",
+        "dependencies": {
+          "RestSharp": "105.2.2"
+        },
+        "compile": {
+          "lib/3.5/Twilio.Api.dll": {}
+        },
+        "runtime": {
+          "lib/3.5/Twilio.Api.dll": {}
         }
       }
     },
@@ -6261,6 +6303,15 @@
           "lib/net45/Remotion.Linq.dll": {}
         }
       },
+      "RestSharp/105.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net46/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net46/RestSharp.dll": {}
+        }
+      },
       "System.Collections/4.0.0": {
         "type": "package",
         "compile": {
@@ -6476,6 +6527,18 @@
         },
         "runtime": {
           "lib/net45/_._": {}
+        }
+      },
+      "Twilio/4.7.0": {
+        "type": "package",
+        "dependencies": {
+          "RestSharp": "105.2.2"
+        },
+        "compile": {
+          "lib/3.5/Twilio.Api.dll": {}
+        },
+        "runtime": {
+          "lib/3.5/Twilio.Api.dll": {}
         }
       }
     }
@@ -8022,6 +8085,40 @@
         "Remotion.Linq.nuspec"
       ]
     },
+    "RestSharp/105.2.2": {
+      "type": "package",
+      "sha512": "DXROmf/5jnJM5Baqzdqc3dMZZQHKPWhYPB9A2/ZYXLOZp9a4rrdvHBza0+tGazPtE+NezyUDYd3qqz5oaU2GZA==",
+      "files": [
+        "lib/MonoAndroid10/RestSharp.dll",
+        "lib/MonoAndroid10/RestSharp.xml",
+        "lib/MonoTouch10/_._",
+        "lib/net35/RestSharp.dll",
+        "lib/net35/RestSharp.xml",
+        "lib/net4/RestSharp.dll",
+        "lib/net4/RestSharp.xml",
+        "lib/net45/RestSharp.dll",
+        "lib/net45/RestSharp.xml",
+        "lib/net451/RestSharp.dll",
+        "lib/net451/RestSharp.xml",
+        "lib/net452/RestSharp.dll",
+        "lib/net452/RestSharp.xml",
+        "lib/net46/RestSharp.dll",
+        "lib/net4-client/RestSharp.dll",
+        "lib/net4-client/RestSharp.xml",
+        "lib/sl5/RestSharp.dll",
+        "lib/sl5/RestSharp.xml",
+        "lib/windowsphone8/RestSharp.dll",
+        "lib/windowsphone8/RestSharp.xml",
+        "lib/windowsphone81/RestSharp.dll",
+        "lib/windowsphone81/RestSharp.xml",
+        "lib/Xamarin.iOS10/RestSharp.dll",
+        "lib/Xamarin.iOS10/RestSharp.xml",
+        "readme.txt",
+        "RestSharp.105.2.2.nupkg",
+        "RestSharp.105.2.2.nupkg.sha512",
+        "RestSharp.nuspec"
+      ]
+    },
     "System.Collections/4.0.0": {
       "type": "package",
       "sha512": "i2vsGDIEbWdHcUSNDPKZP/ZWod6o740el7mGTCy0dqbCxQh74W4QoC+klUwPEtGEFuvzJ7bJgvwJqscosVNyZQ==",
@@ -8795,6 +8892,24 @@
         "System.Threading.4.0.0.nupkg.sha512",
         "System.Threading.nuspec"
       ]
+    },
+    "Twilio/4.7.0": {
+      "type": "package",
+      "sha512": "ImuMea4o+HnL3I+rm1wYT6akX72vxFi0zUNDWbA9s5QKpHkOuRn6tog/b3OQzPQGhx3ROm/HDleN13TB/YuQEQ==",
+      "files": [
+        "lib/3.5/Twilio.Api.dll",
+        "lib/3.5/Twilio.Api.pdb",
+        "lib/3.5/Twilio.Api.xml",
+        "lib/SL5/Twilio.Api.Silverlight.dll",
+        "lib/SL5/Twilio.Api.Silverlight.pdb",
+        "lib/SL5/Twilio.Api.Silverlight.xml",
+        "lib/WINDOWSPHONE8/Twilio.Api.WindowsPhone.dll",
+        "lib/WINDOWSPHONE8/Twilio.Api.WindowsPhone.pdb",
+        "lib/WINDOWSPHONE8/Twilio.Api.WindowsPhone.xml",
+        "Twilio.4.7.0.nupkg",
+        "Twilio.4.7.0.nupkg.sha512",
+        "Twilio.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -8819,7 +8934,8 @@
       "Microsoft.Extensions.Logging >= 1.0.0-rc1-final",
       "Microsoft.Extensions.Logging.Console >= 1.0.0-rc1-final",
       "Microsoft.Extensions.Logging.Debug >= 1.0.0-rc1-final",
-      "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-rc1-final"
+      "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-rc1-final",
+      "Twilio >= 4.7.0"
     ],
     "DNX,Version=v4.6": []
   }

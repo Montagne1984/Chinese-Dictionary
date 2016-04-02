@@ -45,6 +45,14 @@ namespace ChineseDictionary.Web.Services
         public Task SendSmsAsync(string number, string message)
         {
             // Plug in your SMS service here to send a text message.
+            var twilio = new Twilio.TwilioRestClient(
+                Options.TwilioSID,           // Account Sid from dashboard
+                Options.TwilioAuthToken);    // Auth Token
+
+            var result = twilio.SendMessage(Options.TwilioSendNumber, number, message);
+            // Use the debug output for testing without receiving a SMS message.
+            // Remove the Debug.WriteLine(message) line after debugging.
+            System.Diagnostics.Debug.WriteLine(message);
             return Task.FromResult(0);
         }
     }

@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using ChineseDictionary.Web.Models;
 using ChineseDictionary.Web.Services;
+using Microsoft.AspNet.Identity;
 
 namespace ChineseDictionary.Web
 {
@@ -55,6 +56,12 @@ namespace ChineseDictionary.Web
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+                options.Lockout.MaxFailedAccessAttempts = 10;
+            });
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
