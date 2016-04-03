@@ -126,6 +126,8 @@ namespace ChineseDictionary.Web
                 routes.MapRoute("defaultApi",
                                       "api/{controller}/{id?}");
             });
+
+            IdentityData.Initialize(app.ApplicationServices);
         }
 
         // Entry point for the application.
