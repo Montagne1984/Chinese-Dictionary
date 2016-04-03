@@ -30,7 +30,7 @@ namespace ChineseDictionary.Web.Controllers
                 return HttpNotFound();
             }
 
-            Area area = await _context.Areas.SingleAsync(m => m.AreaId == id);
+            Area area = await _context.Areas.SingleAsync(m => m.Id == id);
             if (area == null)
             {
                 return HttpNotFound();
@@ -67,7 +67,7 @@ namespace ChineseDictionary.Web.Controllers
                 return HttpNotFound();
             }
 
-            Area area = await _context.Areas.SingleAsync(m => m.AreaId == id);
+            Area area = await _context.Areas.SingleAsync(m => m.Id == id);
             if (area == null)
             {
                 return HttpNotFound();
@@ -98,7 +98,7 @@ namespace ChineseDictionary.Web.Controllers
                 return HttpNotFound();
             }
 
-            Area area = await _context.Areas.SingleAsync(m => m.AreaId == id);
+            Area area = await _context.Areas.SingleAsync(m => m.Id == id);
             if (area == null)
             {
                 return HttpNotFound();
@@ -112,7 +112,7 @@ namespace ChineseDictionary.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            Area area = await _context.Areas.SingleAsync(m => m.AreaId == id);
+            Area area = await _context.Areas.SingleAsync(m => m.Id == id);
             _context.Areas.Remove(area);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");

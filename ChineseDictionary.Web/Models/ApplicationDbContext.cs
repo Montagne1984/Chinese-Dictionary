@@ -13,6 +13,7 @@ namespace ChineseDictionary.Web.Models
         public DbSet<Vowel> Vowels { get; set; }
         public DbSet<ToneType> ToneTypes { get; set; }
         public DbSet<Area> Areas { get; set; }
+        public DbSet<Tone> Tones { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

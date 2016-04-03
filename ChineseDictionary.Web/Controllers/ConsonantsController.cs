@@ -30,7 +30,7 @@ namespace ChineseDictionary.Web.Controllers
                 return HttpNotFound();
             }
 
-            Consonant consonant = await _context.Consonants.SingleAsync(m => m.ConsonantId == id);
+            Consonant consonant = await _context.Consonants.SingleAsync(m => m.Id == id);
             if (consonant == null)
             {
                 return HttpNotFound();
@@ -67,7 +67,7 @@ namespace ChineseDictionary.Web.Controllers
                 return HttpNotFound();
             }
 
-            Consonant consonant = await _context.Consonants.SingleAsync(m => m.ConsonantId == id);
+            Consonant consonant = await _context.Consonants.SingleAsync(m => m.Id == id);
             if (consonant == null)
             {
                 return HttpNotFound();
@@ -98,7 +98,7 @@ namespace ChineseDictionary.Web.Controllers
                 return HttpNotFound();
             }
 
-            Consonant consonant = await _context.Consonants.SingleAsync(m => m.ConsonantId == id);
+            Consonant consonant = await _context.Consonants.SingleAsync(m => m.Id == id);
             if (consonant == null)
             {
                 return HttpNotFound();
@@ -112,7 +112,7 @@ namespace ChineseDictionary.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            Consonant consonant = await _context.Consonants.SingleAsync(m => m.ConsonantId == id);
+            Consonant consonant = await _context.Consonants.SingleAsync(m => m.Id == id);
             _context.Consonants.Remove(consonant);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");

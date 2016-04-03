@@ -4,7 +4,7 @@ namespace ChineseDictionary.Web.Models
 {
     public class ToneType
     {
-        public int ToneTypeId { get; set; }
+        public int Id { get; set; }
         [Required]
         [MaxLength(10)]
         public string Name { get; set; }

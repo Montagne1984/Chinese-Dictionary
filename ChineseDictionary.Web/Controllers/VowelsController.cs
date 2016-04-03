@@ -30,7 +30,7 @@ namespace ChineseDictionary.Web.Controllers
                 return HttpNotFound();
             }
 
-            Vowel vowel = await _context.Vowels.SingleAsync(m => m.VowelId == id);
+            Vowel vowel = await _context.Vowels.SingleAsync(m => m.Id == id);
             if (vowel == null)
             {
                 return HttpNotFound();
@@ -67,7 +67,7 @@ namespace ChineseDictionary.Web.Controllers
                 return HttpNotFound();
             }
 
-            Vowel vowel = await _context.Vowels.SingleAsync(m => m.VowelId == id);
+            Vowel vowel = await _context.Vowels.SingleAsync(m => m.Id == id);
             if (vowel == null)
             {
                 return HttpNotFound();
@@ -98,7 +98,7 @@ namespace ChineseDictionary.Web.Controllers
                 return HttpNotFound();
             }
 
-            Vowel vowel = await _context.Vowels.SingleAsync(m => m.VowelId == id);
+            Vowel vowel = await _context.Vowels.SingleAsync(m => m.Id == id);
             if (vowel == null)
             {
                 return HttpNotFound();
@@ -112,7 +112,7 @@ namespace ChineseDictionary.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            Vowel vowel = await _context.Vowels.SingleAsync(m => m.VowelId == id);
+            Vowel vowel = await _context.Vowels.SingleAsync(m => m.Id == id);
             _context.Vowels.Remove(vowel);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");

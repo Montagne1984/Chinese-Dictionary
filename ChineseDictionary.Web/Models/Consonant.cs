@@ -4,7 +4,7 @@ namespace ChineseDictionary.Web.Models
 {
     public class Consonant
     {
-        public int ConsonantId { get; set; }
+        public int Id { get; set; }
         [Required]
         [MaxLength(5)]
         public string Name { get; set; }

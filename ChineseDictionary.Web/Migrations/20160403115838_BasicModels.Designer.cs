@@ -8,7 +8,7 @@ using ChineseDictionary.Web.Models;
 namespace ChineseDictionary.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20160403100839_BasicModels")]
+    [Migration("20160403115838_BasicModels")]
     partial class BasicModels
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -65,40 +65,70 @@ namespace ChineseDictionary.Web.Migrations
                     b.HasAnnotation("Relational:TableName", "AspNetUsers");
                 });
 
+            modelBuilder.Entity("ChineseDictionary.Web.Models.Area", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 20);
+
+                    b.HasKey("Id");
+                });
+
             modelBuilder.Entity("ChineseDictionary.Web.Models.Consonant", b =>
                 {
-                    b.Property<int>("ConsonantId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasAnnotation("MaxLength", 5);
 
-                    b.HasKey("ConsonantId");
+                    b.HasKey("Id");
+                });
+
+            modelBuilder.Entity("ChineseDictionary.Web.Models.Tone", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("AreaId")
+                        .IsRequired();
+
+                    b.Property<int?>("ToneTypeId")
+                        .IsRequired();
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 10);
+
+                    b.HasKey("Id");
                 });
 
             modelBuilder.Entity("ChineseDictionary.Web.Models.ToneType", b =>
                 {
-                    b.Property<int>("ToneTypeId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasAnnotation("MaxLength", 10);
 
-                    b.HasKey("ToneTypeId");
+                    b.HasKey("Id");
                 });
 
             modelBuilder.Entity("ChineseDictionary.Web.Models.Vowel", b =>
                 {
-                    b.Property<int>("VowelId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasAnnotation("MaxLength", 5);
 
-                    b.HasKey("VowelId");
+                    b.HasKey("Id");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRole", b =>
@@ -181,6 +211,17 @@ namespace ChineseDictionary.Web.Migrations
                     b.HasKey("UserId", "RoleId");
 
                     b.HasAnnotation("Relational:TableName", "AspNetUserRoles");
+                });
+
+            modelBuilder.Entity("ChineseDictionary.Web.Models.Tone", b =>
+                {
+                    b.HasOne("ChineseDictionary.Web.Models.Area")
+                        .WithMany()
+                        .HasForeignKey("AreaId");
+
+                    b.HasOne("ChineseDictionary.Web.Models.ToneType")
+                        .WithMany()
+                        .HasForeignKey("ToneTypeId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>

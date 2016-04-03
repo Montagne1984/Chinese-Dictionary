@@ -30,7 +30,7 @@ namespace ChineseDictionary.Web.Controllers
                 return HttpNotFound();
             }
 
-            ToneType toneType = await _context.ToneTypes.SingleAsync(m => m.ToneTypeId == id);
+            ToneType toneType = await _context.ToneTypes.SingleAsync(m => m.Id == id);
             if (toneType == null)
             {
                 return HttpNotFound();
@@ -67,7 +67,7 @@ namespace ChineseDictionary.Web.Controllers
                 return HttpNotFound();
             }
 
-            ToneType toneType = await _context.ToneTypes.SingleAsync(m => m.ToneTypeId == id);
+            ToneType toneType = await _context.ToneTypes.SingleAsync(m => m.Id == id);
             if (toneType == null)
             {
                 return HttpNotFound();
@@ -98,7 +98,7 @@ namespace ChineseDictionary.Web.Controllers
                 return HttpNotFound();
             }
 
-            ToneType toneType = await _context.ToneTypes.SingleAsync(m => m.ToneTypeId == id);
+            ToneType toneType = await _context.ToneTypes.SingleAsync(m => m.Id == id);
             if (toneType == null)
             {
                 return HttpNotFound();
@@ -112,7 +112,7 @@ namespace ChineseDictionary.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            ToneType toneType = await _context.ToneTypes.SingleAsync(m => m.ToneTypeId == id);
+            ToneType toneType = await _context.ToneTypes.SingleAsync(m => m.Id == id);
             _context.ToneTypes.Remove(toneType);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
