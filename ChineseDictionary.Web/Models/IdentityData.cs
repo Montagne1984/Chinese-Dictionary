@@ -28,7 +28,7 @@ namespace ChineseDictionary.Web.Models
                 var superAdminUser = await userManager.FindByIdAsync("admin");
                 if(superAdminUser == null)
                 {
-                    superAdminUser = new ApplicationUser { UserName = "admin", EmailConfirmed = true };
+                    superAdminUser = new ApplicationUser { UserName = "admin@chinesedictionary.com", Email = "admin@chinesedictionary.com", EmailConfirmed = true };
                     var createUserResult = await userManager.CreateAsync(superAdminUser, "Abc123!");
                     if (!createUserResult.Succeeded)
                     {

@@ -9,6 +9,10 @@ namespace ChineseDictionary.Web.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Consonant> Consonants { get; set; }
+        public DbSet<Consonant> Vowels { get; set; }
+        public DbSet<Consonant> ToneTypes { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
