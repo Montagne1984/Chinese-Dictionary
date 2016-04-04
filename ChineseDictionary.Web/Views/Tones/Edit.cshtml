@@ -1,4 +1,4 @@
-@model ChineseDictionary.Web.Models.Tone
+@model ChineseDictionary.Web.ViewModels.Tones.EditToneViewModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -12,6 +12,20 @@
         <hr />
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="Id" />
+        <div class="form-group row">
+            <label asp-for="AreaId" class="col-md-2 form-control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="AreaId" asp-items="@(new SelectList(ViewBag.Areas, "Id", "Name"))" class="form-control"></select>
+                <span asp-validation-for="AreaId" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="ToneTypeId" class="col-md-2 form-control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="ToneTypeId" asp-items="@(new SelectList(ViewBag.ToneTypes, "Id", "Name"))" class="form-control"></select>
+                <span asp-validation-for="ToneTypeId" class="text-danger" />
+            </div>
+        </div>
         <div class="form-group row">
             <label asp-for="Value" class="col-md-2 form-control-label"></label>
             <div class="col-md-10">
