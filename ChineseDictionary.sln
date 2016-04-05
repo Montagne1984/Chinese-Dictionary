@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ChineseDictionary.Web", "ChineseDictionary.Web\ChineseDictionary.Web.xproj", "{77128CB1-DFF3-43A9-826A-AEE11A2ED10A}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ChineseDictionary", "src\ChineseDictionary\ChineseDictionary.xproj", "{77128CB1-DFF3-43A9-826A-AEE11A2ED10A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{40F27648-38A7-48AA-89B4-F198DE8A6F33}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{23F6CD4D-400C-4DDD-905E-41C191DA88DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +25,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{77128CB1-DFF3-43A9-826A-AEE11A2ED10A} = {23F6CD4D-400C-4DDD-905E-41C191DA88DB}
 	EndGlobalSection
 EndGlobal
